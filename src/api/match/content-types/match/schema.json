@@ -47,11 +47,11 @@
     },
     "sets": {
       "type": "json",
-      "required": true
+      "required": false
     },
     "games": {
       "type": "json",
-      "required": true
+      "required": false
     },
     "winner": {
       "type": "string"

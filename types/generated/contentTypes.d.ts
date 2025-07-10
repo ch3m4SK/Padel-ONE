@@ -388,7 +388,7 @@ export interface ApiMatchMatch extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.Integer & Schema.Attribute.Required;
-    games: Schema.Attribute.JSON & Schema.Attribute.Required;
+    games: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::match.match'> &
       Schema.Attribute.Private;
@@ -397,7 +397,7 @@ export interface ApiMatchMatch extends Struct.CollectionTypeSchema {
     player1: Schema.Attribute.String & Schema.Attribute.Required;
     player2: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    sets: Schema.Attribute.JSON & Schema.Attribute.Required;
+    sets: Schema.Attribute.JSON;
     startTime: Schema.Attribute.DateTime & Schema.Attribute.Required;
     state: Schema.Attribute.Enumeration<['scheduled', 'started', 'finished']> &
       Schema.Attribute.DefaultTo<'scheduled'>;
