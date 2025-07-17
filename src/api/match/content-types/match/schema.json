@@ -20,14 +20,6 @@
       "target": "api::pista.pista",
       "inversedBy": "matches"
     },
-    "player1": {
-      "type": "string",
-      "required": true
-    },
-    "player2": {
-      "type": "string",
-      "required": true
-    },
     "startTime": {
       "type": "datetime",
       "required": true
@@ -42,7 +34,8 @@
       "enum": [
         "scheduled",
         "started",
-        "finished"
+        "finished",
+        "canceled"
       ]
     },
     "sets": {
@@ -55,6 +48,18 @@
     },
     "winner": {
       "type": "string"
+    },
+    "club": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::club.club",
+      "inversedBy": "matches"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::player.player",
+      "inversedBy": "matches"
     }
   }
 }

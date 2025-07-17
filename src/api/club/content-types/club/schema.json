@@ -1,34 +1,35 @@
 {
   "kind": "collectionType",
-  "collectionName": "pistas",
+  "collectionName": "clubs",
   "info": {
-    "singularName": "pista",
-    "pluralName": "pistas",
-    "displayName": "Pista"
+    "singularName": "club",
+    "pluralName": "clubs",
+    "displayName": "Club"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "pistaId": {
-      "type": "uid"
-    },
-    "name": {
+    "Name": {
       "type": "string",
       "required": true
+    },
+    "ClubId": {
+      "type": "uid",
+      "targetField": "Name"
     },
     "matches": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::match.match",
-      "mappedBy": "pista"
+      "mappedBy": "club"
     },
-    "club": {
+    "pista": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::club.club",
-      "mappedBy": "pista"
+      "target": "api::pista.pista",
+      "inversedBy": "club"
     }
   }
 }
